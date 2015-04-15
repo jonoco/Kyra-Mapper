@@ -53,7 +53,7 @@ BasicGame.Game.prototype = {
 
     this.stage.backgroundColor = '#2d2d2d';
     
-    this.game.add.image( 23, 24, 'room01').scale.setTo(0.5);
+    this.game.add.image( 23, 24, 'room').scale.setTo(0.5);
     this.game.add.image( 0, 0, 'gui').scale.setTo(0.5);
 
     this.createMap();
@@ -166,6 +166,7 @@ BasicGame.Game.prototype = {
     
     // stringify grid
     // output json to copy manually
+    
     var myJson = JSON.stringify(this.grid.nodes);
     console.dir(myJson);
 
@@ -173,7 +174,8 @@ BasicGame.Game.prototype = {
 
   importGrid: function () {
 
-    console.log('loading grid');
+    // import testing
+
     var gridJson = this.game.cache.getJSON('json_room01');
     //console.log(gridJson);
     this.grid.nodes = gridJson;
